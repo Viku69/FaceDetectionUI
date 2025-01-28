@@ -1,0 +1,100 @@
+body {
+  background: linear-gradient(45deg, #60c18e, #4b9c6e);
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  margin: 0;
+}
+
+.App {
+  text-align: center;
+  width:80vw;
+  max-width: 1200px;
+
+}
+
+h1 {
+  color: #fff;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.card {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  flex: 1;
+}
+
+.left-side {
+  text-align: center;
+  flex-wrap: wrap;
+}
+
+.image-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+
+.image-grid img {
+  width: 150px;
+  height: 150px;
+  object-fit:contain;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.right-side {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.preview img {
+  width: 200px;
+  margin-top: 10px;
+  border-radius: 8px;
+}
+
+input[type="file"] {
+  margin-top: 10px;
+}
+
+button {
+  background-color: #4b9c6e;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+button:hover {
+  background-color: #3e7e5b;
+}
+
+ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+li {
+  margin: 5px 0;
+  color: #333;
+}
+
+strong {
+  color: #60c18e;
+}
