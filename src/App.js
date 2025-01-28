@@ -93,15 +93,24 @@ function App() {
 
           {output && (
             <>
-              <h2>Possible Matches:</h2>
-              <ul>
-                {output.map((person, index) => (
-                  <li key={index}>
-                    <strong>{person.class}</strong> -{" "}
-                    {person.class_probability[index].toFixed(2)}% probability
-                  </li>
-                ))}
-              </ul>
+              {
+                output.lenght > 0 ? (
+                  <>
+                    <h2>Possible Matches:</h2>
+                    <ul>
+                      {output.map((person, index) => (
+                        <li key={index}>
+                          <strong>{person.class}</strong> -{" "}
+                          {person.class_probability[index].toFixed(2)}% probability
+                        </li>
+                      ))}
+                    </ul>
+                  </>
+                ) : (
+                  <h3>No matches found.</h3>
+                )
+              }
+
             </>
           )}
         </div>
