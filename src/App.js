@@ -7,6 +7,7 @@ function App() {
   const [base64Image, setBase64Image] = useState("");
   const [output, setOutput] = useState(null);
   const [imageList, setImageList] = useState([]);
+  const [loading, setLoading] = useState(false);
 
   // Fetch images from the "images" folder
   useEffect(() => {
@@ -34,14 +35,17 @@ function App() {
       return;
     }
 
+    setLoading(true);
     try {
-      const response = await axios.post("http://127.0.0.1:8000/classify_image", {
+      const response = await axios.post("https://facedetectionapi-xlab.onrender.com/classify_image", {
         image_data: base64Image,
       });
       setOutput(response.data);
     } catch (error) {
       console.error("Error uploading image:", error);
       alert("There was an error with the image upload.");
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -78,6 +82,14 @@ function App() {
           )}
           <button onClick={handleImageUpload}>Classify Image</button>
           <button onClick={handleReset} className="reset-btn">Reset</button>
+
+          {
+            loading && (
+              <div className="loader-container">
+                <div className="loader"></div>
+              </div>
+            )
+          }
 
           {output && (
             <>
