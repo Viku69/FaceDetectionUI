@@ -94,7 +94,7 @@ function App() {
           {output && (
             <>
               {
-                output.lenght > 0 ? (
+                output.length > 0 ? (
                   <>
                     <h2>Possible Matches:</h2>
                     <ul>
